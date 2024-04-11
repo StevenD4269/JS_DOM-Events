@@ -63,7 +63,7 @@ newP.appendChild(document.createElement("p"));
 // Select the parent node
 // In index.html there is an id = parent
 // querySelector will let me find the very first element under that id
-let parentNode = document.querySelector("parent");
+let parent = document.querySelector("parent");
 
 
 
@@ -81,20 +81,8 @@ anchor.textContent = "I am a <a> tag";
 parent.insertBefore(anchor, paragraph);
 
 // Add a link href to the <a>
-anchor.href = "https://example.com"; // Replace "https://example.com" with your desired URL
+anchor.href = "https://MyHeadHurts.com"; 
 
-
-
-
-
-
-
-
-// TODO: Create a <a> element using this document.createElement() and put this text inside "I am a <a> tag"
-
-// BONUS: Add a link href to the <a>
-
-// TODO: Insert the created <a> in the parent but before the <p> you just created using the element.insertBefore() method
 
 /*----------- Exercise #3: REMOVING/REPLACING ELEMENTS/OBJECTS -----------*/
 
