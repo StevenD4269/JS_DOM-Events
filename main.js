@@ -26,7 +26,7 @@ if (newNode2.length > 0) {
 } else {
   ("invalid entry");
 }
-// 'document.getElementsByClassName("node2"), is like using a barcode reader to find all the boxes with a specific label, let's called "node2". The reader gives us a list of all these boxes.
+// 'document.getElementsByClassName("node2"), is like using a barcode reader to find all the boxes with a specific label, called "node2". The reader gives us a list of all these boxes.
 
 // Now, we want to change the message written on each of these boxes. To do that, we go through each box one by one. So, when we say newNode2[i], it's like pointing to one of these boxes at a time.
 
@@ -36,6 +36,13 @@ if (newNode2.length > 0) {
 
 // Select ALL the h3 tags and change the text to: "I used the getElementByTagName("h3") method to access all of these" */
 const newTags = document.getElementsByTagName("h3");
+for (let i = 0; i < newTags.length; i++) {
+  newTags[i].textContent = "I used the getElementByTagName(h3) method to access all of these";
+}
+
+
+
+
 
 /*----------- Exercise #2: CREATING/APPENDING/INSERTING ELEMENTS/OBJECTS -----------*/
 
@@ -87,4 +94,3 @@ const newTags = document.getElementsByTagName("h3");
 // BONUS: The modal popup should be able to be closed. Refactor for this functionality
 
 
-test test test
