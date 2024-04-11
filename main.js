@@ -3,9 +3,39 @@ console.log("Script attached");
 
 // Select Node #1 and change the text to: "I used the getElementById("node1") method to access this"
 
+// Creat a new variable and set equal to where it needs to look so "document then node1 id"
+
+const newNode1 = document.getElementById("node1");
+// use textContent to add text, NEEDS an = sign
+newNode1.textContent =
+  'I used the getElementById("node1") method to access this';
+// console.log to check
+console.log(newNode1);
+
 // Select Node #2 and change the text to: "I used the getElementByClassName("node2") method to access this" */
 
+// getElementsByClassName pulls a COLLECTION of items, not a single one.
+const newNode2 = document.getElementsByClassName("node2");
+if (newNode2.length > 0) {
+  for (let i = 0; i < newNode2.length; i++) {
+    // i < newNode2.length sets the condition for the loop to continue iterating as long as i is less than the length of the newNode2 collection.
+    newNode2[i].textContent =
+      'I used the getElementByClassName("node2") method to access this';
+  }
+  console.log(newNode2);
+} else {
+  ("invalid entry");
+}
+// 'document.getElementsByClassName("node2"), is like using a barcode reader to find all the boxes with a specific label, let's called "node2". The reader gives us a list of all these boxes.
+
+// Now, we want to change the message written on each of these boxes. To do that, we go through each box one by one. So, when we say newNode2[i], it's like pointing to one of these boxes at a time.
+
+// Next, we use our marker pen to write a new message on each box. This is what textContent does. It's like the space on the box where we write things.
+
+// Finally, after we've written on all the boxes, we might want to check what we've done. So, we gather all the boxes together again and take a look at them. This is like console.log(newNode2), where we're checking all the boxes to see if the messages have been changed correctly.
+
 // Select ALL the h3 tags and change the text to: "I used the getElementByTagName("h3") method to access all of these" */
+const newTags = document.getElementsByTagName("h3");
 
 /*----------- Exercise #2: CREATING/APPENDING/INSERTING ELEMENTS/OBJECTS -----------*/
 
@@ -28,8 +58,18 @@ console.log("Script attached");
 /*----------- Exercise #4: LIST ITEMS ----------- */
 // Use the following array of values to generate a list on the DOM
 
-let list = [ "apples", "bananas", "carrots", "dragon fruit", "eggplant", "fish", "grapes", "honey", "ice bag", "juice (any kind)" ];
-
+// let list = [
+//   "apples",
+//   "bananas",
+//   "carrots",
+//   "dragon fruit",
+//   "eggplant",
+//   "fish",
+//   "grapes",
+//   "honey",
+//   "ice bag",
+//   "juice (any kind)",
+// ];
 
 // TODO: Create an unordered list element
 
@@ -37,7 +77,7 @@ let list = [ "apples", "bananas", "carrots", "dragon fruit", "eggplant", "fish",
 
 // TODO: Append the new list items to the unordered list element
 
-// TODO: Append the unordered list to the `div#container` under exercise 4 
+// TODO: Append the unordered list to the `div#container` under exercise 4
 
 /*----------- Exercise #5: DOM EVENTS --------------*/
 
