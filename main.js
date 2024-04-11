@@ -40,7 +40,9 @@ for (let i = 0; i < newTags.length; i++) {
   newTags[i].textContent = "I used the getElementByTagName(h3) method to access all of these";
 }
 
-
+// here I create a new variable and set it equal to a specific area i want it to find and target
+// I create a for loop to run through the collection
+// Again, [i] is me saying at this specific point where I targeted h3, i=0 so add this text
 
 
 
@@ -48,7 +50,45 @@ for (let i = 0; i < newTags.length; i++) {
 
 // TODO: Create a paragraph element using this document.createElement() and put this text inside "This node was created using the createElement() method"
 
+// create a paragraph element
+const paragraph = document.createElement("p");
+
+// Set the text of the content
+paragraph.textContent = "This node was created using the createElement() method";
 // TODO: Append the created node to the parent node using the element.appendChild() method
+newP.appendChild(document.createElement("p"));
+
+
+
+// Select the parent node
+// In index.html there is an id = parent
+// querySelector will let me find the very first element under that id
+let parentNode = document.querySelector("parent");
+
+
+
+
+// Append the paragraph to the parent node
+parent.appendChild(paragraph);
+
+// Create an anchor element
+let anchor = document.createElement("a");
+
+// Set the text content of the anchor
+anchor.textContent = "I am a <a> tag";
+
+// Insert the anchor before the paragraph
+parent.insertBefore(anchor, paragraph);
+
+// Add a link href to the <a>
+anchor.href = "https://example.com"; // Replace "https://example.com" with your desired URL
+
+
+
+
+
+
+
 
 // TODO: Create a <a> element using this document.createElement() and put this text inside "I am a <a> tag"
 
