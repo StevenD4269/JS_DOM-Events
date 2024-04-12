@@ -88,7 +88,27 @@ anchor.href = "https://MyHeadHurts.com";
 
 // TODO: Replace the "Child Node" with a new <p> element that reads "New Child Node"
 
+
+// create the existing paragraph with a variable
+const existingParagraph = document.getElementById("N1");
+
+// Create a new paragraph that will create the element paragraph
+const childToPara = document.createElement("p");
+
+
+// Make your new variable read `new child node`
+childToPara.textContent("New Child Node");
+
+// Now replace the old element N1 with the new paragraph
+// 1. use .parentNode to reference the original element
+// 2. use replaceChild("element to add, element to replace")
+existingParagraph.parentNode.replaceChild(childToPara, existingParagraph);
+
+
 // TODO: Remove the "New Child Node"
+// I need to reference the new variable and remove it
+childToPara.remove();
+
 
 /*----------- Exercise #4: LIST ITEMS ----------- */
 // Use the following array of values to generate a list on the DOM
