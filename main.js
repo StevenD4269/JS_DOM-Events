@@ -153,15 +153,25 @@ parentOfList.append(newUl);
 // -----------------------------------------------------------------------------------------------------------------------------------
 
 /*----------- Exercise #5: DOM EVENTS --------------*/
+//steps for our JS
+// 1. Select the button
+// 2. Add an event listener to the button (see previous lecture)
+// 3. When the button gets clicked, do the following:
+//   4. Create a div
+//   5. Give that div an id of "modal"
+//   6. Create a second div
+//   7. Give that second div a class of modal-card (.classList.add())
+//   8. Create a paragraph tag
+//   9. Give that paragraph some text
+//   10. Append the paragraph into the second div
+//   11. Append the second div into the first div
+//   12. Append the first div onto the page (wherever you'd like)
 
-// TODO: write a function called "show" which creates a new div with an alerting message to the user with this message
-const show() {
-  // creates new div Here that is a modal
-  // insert alert message into the div / push
-  // Click a button to trigger an event
-  // The event is show()
-  // close the modal
+// Create a function
+function show() {
+  // Make a new variable called modalDiv that creates a new div element
+  const modalDiv = document.createElement("div");
+  // Set an Id for Modal
+  modalDiv.id = "modal";
+  // give it the requested content
 }
-// -> "Clicking the button triggers the onclick event, which calls the JS function show()... which alerts the user"
-// This div should be a 'modal' that covers the main content on the screen
-// BONUS: The modal popup should be able to be closed. Refactor for this functionality
