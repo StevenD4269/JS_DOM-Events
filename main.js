@@ -65,12 +65,10 @@ const paragraph = document.createElement("p");
 paragraph.textContent =
   "This node was created using the createElement() method";
 // TODO: Append the created node to the parent node using the element.appendChild() method
-newP.appendChild(document.createElement("p"));
-
 // Select the parent node
 // In index.html there is an id = parent
-// querySelector will let me find the very first element under that id
-let parent = document.querySelector("parent");
+// getElementById will let me find the very first element under that id
+const parent = document.getElementById("parent");
 
 // Append the paragraph to the parent node
 parent.appendChild(paragraph);
