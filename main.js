@@ -3,7 +3,7 @@ console.log("Script attached");
 
 // Select Node #1 and change the text to: "I used the getElementById("node1") method to access this"
 
-// Creat a new variable and set equal to where it needs to look so "document then node1 id"
+// Create a new variable and set equal to where it needs to find the element so "document then node1 id"
 
 const newNode1 = document.getElementById("node1");
 // use textContent to add text, NEEDS an = sign
@@ -11,10 +11,11 @@ newNode1.textContent =
   'I used the getElementById("node1") method to access this';
 // console.log to check
 console.log(newNode1);
-
+// -----------------------------------------------------
 // Select Node #2 and change the text to: "I used the getElementByClassName("node2") method to access this" */
-
 // getElementsByClassName pulls a COLLECTION of items, not a single one.
+// Can do a `for` loop or select the specific index
+// Option 1
 const newNode2 = document.getElementsByClassName("node2");
 if (newNode2.length > 0) {
   for (let i = 0; i < newNode2.length; i++) {
@@ -26,6 +27,12 @@ if (newNode2.length > 0) {
 } else {
   ("invalid entry");
 }
+// Option 2
+// If you console.log it then it shows at index 0
+// const newNode2 = document''
+// newNode2[0].textcontent = "string";
+
+// An example to make this make sense in my head
 // 'document.getElementsByClassName("node2"), is like using a barcode reader to find all the boxes with a specific label, called "node2". The reader gives us a list of all these boxes.
 
 // Now, we want to change the message written on each of these boxes. To do that, we go through each box one by one. So, when we say newNode2[i], it's like pointing to one of these boxes at a time.
@@ -34,17 +41,18 @@ if (newNode2.length > 0) {
 
 // Finally, after we've written on all the boxes, we might want to check what we've done. So, we gather all the boxes together again and take a look at them. This is like console.log(newNode2), where we're checking all the boxes to see if the messages have been changed correctly.
 
+// ------------------------------------------
+
 // Select ALL the h3 tags and change the text to: "I used the getElementByTagName("h3") method to access all of these" */
 const newTags = document.getElementsByTagName("h3");
 for (let i = 0; i < newTags.length; i++) {
-  newTags[i].textContent = "I used the getElementByTagName(h3) method to access all of these";
+  newTags[i].textContent =
+    "I used the getElementByTagName(h3) method to access all of these";
 }
 
 // here I create a new variable and set it equal to a specific area i want it to find and target
 // I create a for loop to run through the collection
-// Again, [i] is me saying at this specific point where I targeted h3, i=0 so add this text
-
-
+// Again, [i] is me saying at this specific point where I targeted h3, i=0 so add this text and repeat loop as i increases until it reaches the length
 
 /*----------- Exercise #2: CREATING/APPENDING/INSERTING ELEMENTS/OBJECTS -----------*/
 
@@ -54,19 +62,15 @@ for (let i = 0; i < newTags.length; i++) {
 const paragraph = document.createElement("p");
 
 // Set the text of the content
-paragraph.textContent = "This node was created using the createElement() method";
+paragraph.textContent =
+  "This node was created using the createElement() method";
 // TODO: Append the created node to the parent node using the element.appendChild() method
 newP.appendChild(document.createElement("p"));
-
-
 
 // Select the parent node
 // In index.html there is an id = parent
 // querySelector will let me find the very first element under that id
 let parent = document.querySelector("parent");
-
-
-
 
 // Append the paragraph to the parent node
 parent.appendChild(paragraph);
@@ -81,20 +85,17 @@ anchor.textContent = "I am a <a> tag";
 parent.insertBefore(anchor, paragraph);
 
 // Add a link href to the <a>
-anchor.href = "https://MyHeadHurts.com"; 
-
+anchor.href = "https://MyHeadHurts.com";
 
 /*----------- Exercise #3: REMOVING/REPLACING ELEMENTS/OBJECTS -----------*/
 
 // TODO: Replace the "Child Node" with a new <p> element that reads "New Child Node"
-
 
 // create the existing paragraph with a variable
 const existingParagraph = document.getElementById("N1");
 
 // Create a new paragraph that will create the element paragraph
 const childToPara = document.createElement("p");
-
 
 // Make your new variable read `new child node`
 childToPara.textContent("New Child Node");
@@ -104,11 +105,9 @@ childToPara.textContent("New Child Node");
 // 2. use replaceChild("element to add, element to replace")
 existingParagraph.parentNode.replaceChild(childToPara, existingParagraph);
 
-
 // TODO: Remove the "New Child Node"
 // I need to reference the new variable and remove it
 childToPara.remove();
-
 
 /*----------- Exercise #4: LIST ITEMS ----------- */
 // Use the following array of values to generate a list on the DOM
@@ -140,6 +139,3 @@ childToPara.remove();
 // -> "Clicking the button triggers the onclick event, which calls the JS function show()... which alerts the user"
 // This div should be a 'modal' that covers the main content on the screen
 // BONUS: The modal popup should be able to be closed. Refactor for this functionality
-
-
-tes test
