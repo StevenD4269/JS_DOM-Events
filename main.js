@@ -74,66 +74,94 @@ const parent = document.getElementById("parent");
 parent.appendChild(paragraph);
 
 // Create an anchor element
-let anchor = document.createElement("a");
+const anchor = document.createElement("a");
 
 // Set the text content of the anchor
 anchor.textContent = "I am a <a> tag";
 
 // Insert the anchor before the paragraph
+// insertBefore(newNode, referenceNodeitWillGoBehind)
 parent.insertBefore(anchor, paragraph);
 
 // Add a link href to the <a>
 anchor.href = "https://MyHeadHurts.com";
 
+// ----------------------------------------------
+
 /*----------- Exercise #3: REMOVING/REPLACING ELEMENTS/OBJECTS -----------*/
 
 // TODO: Replace the "Child Node" with a new <p> element that reads "New Child Node"
 
-// create the existing paragraph with a variable
-const existingParagraph = document.getElementById("N1");
+// create the existing paragraph(parent element) with a variable; exercise-container3 is the ID in index.html
+const existingParagraph = document.querySelector("#exercise-container3");
 
 // Create a new paragraph that will create the element paragraph
 const childToPara = document.createElement("p");
 
 // Make your new variable read `new child node`
-childToPara.textContent("New Child Node");
+childToPara.textContent = "New Child Node";
+// Select the child
+const ex3Child = document.querySelector("#N1");
 
 // Now replace the old element N1 with the new paragraph
-// 1. use .parentNode to reference the original element
 // 2. use replaceChild("element to add, element to replace")
-existingParagraph.parentNode.replaceChild(childToPara, existingParagraph);
+existingParagraph.replaceChild(childToPara, ex3Child);
 
 // TODO: Remove the "New Child Node"
 // I need to reference the new variable and remove it
 childToPara.remove();
 
+// -----------------------------------------------------------------------------------------------------------------------
+
 /*----------- Exercise #4: LIST ITEMS ----------- */
 // Use the following array of values to generate a list on the DOM
 
-// let list = [
-//   "apples",
-//   "bananas",
-//   "carrots",
-//   "dragon fruit",
-//   "eggplant",
-//   "fish",
-//   "grapes",
-//   "honey",
-//   "ice bag",
-//   "juice (any kind)",
-// ];
+let list = [
+  "apples",
+  "bananas",
+  "carrots",
+  "dragon fruit",
+  "eggplant",
+  "fish",
+  "grapes",
+  "honey",
+  "ice bag",
+  "juice (any kind)",
+];
 
 // TODO: Create an unordered list element
 
+//  look at index.html to see the location of the parent container: called container in index.html
+const parentOfList = document.getElementById("container");
+
+// Create new ul
+const newUl = document.createElement("ul");
+
 // TODO: Iterate over the array values, and create a list item element for each
-
-// TODO: Append the new list items to the unordered list element
-
+for (let i = 0; i < list.length; i++) {
+  // create an element
+  const tempLi = document.createElement("li");
+  // modify an element: We want to reference this array one thing at a time starting at i
+  tempLi.textContent = list[i];
+  // append the element: put it on the page
+  newUl.append(tempLi);
+}
 // TODO: Append the unordered list to the `div#container` under exercise 4
+// Append: insert this within the body of the element
+parentOfList.append(newUl);
+
+// -----------------------------------------------------------------------------------------------------------------------------------
 
 /*----------- Exercise #5: DOM EVENTS --------------*/
 
 // TODO: write a function called "show" which creates a new div with an alerting message to the user with this message
+const show() {
+  // creates new div Here that is a modal
+  // insert alert message into the div / push
+  // Click a button to trigger an event
+  // The event is show()
+  // close the modal
+}
 // -> "Clicking the button triggers the onclick event, which calls the JS function show()... which alerts the user"
 // This div should be a 'modal' that covers the main content on the screen
 // BONUS: The modal popup should be able to be closed. Refactor for this functionality
